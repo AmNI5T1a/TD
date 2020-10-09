@@ -13,9 +13,10 @@ namespace TD_game
 
         [SerializeField] private byte enemySpawnInterval;
 
-        [SerializeField] private List<Transform> spawnPointsTEST = new List<Transform>();
+        [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+        [SerializeField] public List<Transform> waypoints = new List<Transform>();
 
-        [SerializeField] public List<GameObject> listOfEnemies = new List<GameObject>();
+        [HideInInspector] public List<GameObject> listOfEnemies = new List<GameObject>();
 
         void Start()
         {
@@ -28,15 +29,15 @@ namespace TD_game
         }
         void SpawnAMob()
         {
-            listOfEnemies.Add(GameObject.Instantiate(_enemyPrefab, spawnPointsTEST[Random.Range(0, spawnPointsTEST.Count)].position, Quaternion.identity) as GameObject);
+            listOfEnemies.Add(GameObject.Instantiate(_enemyPrefab, spawnPoints[Random.Range(0, spawnPoints.Count)].position, Quaternion.identity) as GameObject);
         }
          private IEnumerator Spawner()
         {
             while (listOfEnemies.Count < numberOfMobs)
             {
                 SpawnAMob();
-                Debug.Log($"Spawned an enemy");
-                 Debug.Log($"Total number of enemies: {listOfEnemies.Count}");
+                //Debug.Log($"Spawned an enemy");
+                //Debug.Log($"Total number of enemies: {listOfEnemies.Count}");
                 yield return new WaitForSeconds(enemySpawnInterval);
             }
         }
