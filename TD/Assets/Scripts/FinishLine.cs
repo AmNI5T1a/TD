@@ -7,17 +7,26 @@ namespace TD_game
 {
     public class FinishLine : MonoBehaviour
     {
+        private bool onTriggerEnter = false;
+        private MobSpawner mobSpawner;
         private void OnTriggerEnter(Collider other)
         {
-
             if (other.tag == "Enemy")
             {
-                Debug.Log("Triggered by Enemy");
                 Destroy(other.gameObject, 1f);
+                onTriggerEnter = true;
             }
-            else
+        }
+        void Awake()
+        {
+            MobSpawner mobSpawner = GameObject.Find("MobSpawner").GetComponent<MobSpawner>();
+        }
+        void Update()
+        {
+            if (onTriggerEnter && mobSpawner !=null)
             {
-                Debug.LogWarning("Triggered by another object");
+                mobSpawner.currentNumberOfMobs--;
+                onTriggerEnter = false;
             }
         }
     }

@@ -5,6 +5,22 @@ using UnityEngine;
 
 namespace TD_game
 {
+    public struct Mob
+    {
+        public GameObject enemyPrefab;
+        public Transform spawnpoint;
+
+        public Mob(GameObject enemyPrefab, Transform spawnpoint)
+        {
+            this.enemyPrefab = enemyPrefab;
+            this.spawnpoint = spawnpoint;
+        }
+
+        public void DisplayInfo()
+        {
+            Debug.Log($"1.Spawnpoint: {spawnpoint}\n");
+        }
+    }
     public class MobSpawner : MonoBehaviour
     {
         [SerializeField] public byte numberOfMobs;
@@ -13,10 +29,10 @@ namespace TD_game
 
         [SerializeField] private byte enemySpawnInterval;
 
-        [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
+        [SerializeField] public List<Transform> spawnPoints = new List<Transform>();
         [SerializeField] public List<Transform> waypoints = new List<Transform>();
-
-        [HideInInspector] public List<GameObject> listOfEnemies = new List<GameObject>();
+        [HideInInspector] public List<Mob> listofenemies = new List<Mob>();
+        [HideInInspector] public byte currentNumberOfMobs;
 
         void Start()
         {
@@ -27,17 +43,25 @@ namespace TD_game
         {
 
         }
-        void SpawnAMob()
+        public void CreateMob()
         {
-            listOfEnemies.Add(GameObject.Instantiate(_enemyPrefab, spawnPoints[Random.Range(0, spawnPoints.Count)].position, Quaternion.identity) as GameObject);
+            currentNumberOfMobs++;
+            Mob currentMob = new Mob(enemyPrefab: _enemyPrefab, spawnpoint: spawnPoints[Random.Range(0, spawnPoints.Count)]);
+            listofenemies.Add(currentMob);
+            SpawnAMob(ref currentMob);
         }
-         private IEnumerator Spawner()
+        void SpawnAMob(ref Mob mob)
         {
-            while (listOfEnemies.Count < numberOfMobs)
+            GameObject.Instantiate(mob.enemyPrefab, mob.spawnpoint.position, Quaternion.identity);
+        }
+        private IEnumerator Spawner()
+        {
+
+            while (currentNumberOfMobs < numberOfMobs)
             {
-                SpawnAMob();
-                //Debug.Log($"Spawned an enemy");
-                //Debug.Log($"Total number of enemies: {listOfEnemies.Count}");
+                CreateMob();
+
+
                 yield return new WaitForSeconds(enemySpawnInterval);
             }
         }
