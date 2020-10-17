@@ -5,19 +5,22 @@ namespace TD_game
 {
     public class MobMovement : MonoBehaviour
     {
-        [SerializeField] public float enemySpeed;
-        [HideInInspector] public byte _currentWaypointIndex = 0;
+        [SerializeField]
+        public float enemySpeed;
+        [HideInInspector]
+        public byte _currentWaypointIndex = 0;
 
-        [SerializeField] public GameObject fisrtSpawnpoint;
+        [SerializeField]
+        public GameObject fisrtSpawnpoint;
 
         private List<Transform> waypoints = new List<Transform>();
-        private bool generateNewRoute = false;
+        private bool _generateNewRoute = false;
 
         void Start()
         {
             InitializeWaypoints();
             CheckRoute();
-            if (generateNewRoute)
+            if (_generateNewRoute)
             {
                 waypoints = GenerateNewRoute();
                 Debug.LogWarning("Generated new route");
@@ -50,14 +53,14 @@ namespace TD_game
             List<Transform> newRoute = new List<Transform>();
 
             Transform currentNearestPoint = waypoints[8];
-            
+
             for (byte k = 0; k < waypoints.Count; k++)
             {
                 for (byte j = 0; j < waypoints.Count; j++)
                 {
                     if (Vector3.Distance(transform.position, waypoints[j].position) < Vector3.Distance(transform.position, currentNearestPoint.position))
                     {
-                        if(!newRoute.Contains(waypoints[j]))
+                        if (!newRoute.Contains(waypoints[j]))
                             currentNearestPoint = waypoints[j];
                     }
                 }
@@ -95,13 +98,13 @@ namespace TD_game
             {
                 //Debug.Log("Following route from first spawnpoint");
                 RouteFrom1Spawnpoint firstRoute = new RouteFrom1Spawnpoint();
-                firstRoute.FollowRoute(ref waypoints, ref generateNewRoute);
+                firstRoute.FollowRoute(ref waypoints, ref _generateNewRoute);
             }
             else
             {
                 //Debug.Log("Following route from 2 spawnpoint");
                 RouteFrom2Spawnpoint secondRoute = new RouteFrom2Spawnpoint();
-                secondRoute.FollowRoute(ref waypoints, ref generateNewRoute);
+                secondRoute.FollowRoute(ref waypoints, ref _generateNewRoute);
             }
         }
         abstract class RouteFollower
