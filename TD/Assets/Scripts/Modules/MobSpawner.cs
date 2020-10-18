@@ -23,25 +23,19 @@ namespace TD_game
     }
     public class MobSpawner : MonoBehaviour
     {
-        [SerializeField] public byte numberOfMobs;
+        [SerializeField] private byte maxNumberOfMobsOnScene;
 
         [SerializeField] private GameObject _enemyPrefab;
 
-        [SerializeField] private byte enemySpawnInterval;
+        [SerializeField] private float enemySpawnInterval = 0.75f;
 
         [SerializeField] public List<Transform> spawnPoints = new List<Transform>();
-        [SerializeField] public List<Transform> waypoints = new List<Transform>();
         [HideInInspector] public List<Mob> listofenemies = new List<Mob>();
-        [HideInInspector] public byte currentNumberOfMobs;
+        [SerializeField] public byte currentNumberOfMobs = 0;
 
         void Start()
         {
             StartCoroutine(routine: Spawner());
-        }
-
-        void Update()
-        {
-
         }
         public void CreateMob()
         {
@@ -57,10 +51,9 @@ namespace TD_game
         private IEnumerator Spawner()
         {
 
-            while (currentNumberOfMobs < numberOfMobs)
+            while (currentNumberOfMobs < maxNumberOfMobsOnScene)
             {
                 CreateMob();
-
 
                 yield return new WaitForSeconds(enemySpawnInterval);
             }

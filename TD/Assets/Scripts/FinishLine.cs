@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,26 +8,45 @@ namespace TD_game
 {
     public class FinishLine : MonoBehaviour
     {
-        private bool onTriggerEnter = false;
-        private MobSpawner mobSpawner;
-        private void OnTriggerEnter(Collider other)
+        private bool triggeredByEnemy = false;
+        private MobSpawner mobSpawner = null;
+        [Range(0, 1)]
+        public float destroyDelay = 0.75f;
+        void OnTriggerEnter(Collider collider)
         {
-            if (other.tag == "Enemy")
+            if (collider.gameObject.tag == "Enemy")
             {
-                Destroy(other.gameObject, 1f);
-                onTriggerEnter = true;
+                Destroy(collider.gameObject, destroyDelay);
+                Debug.Log("Triggered by enemy");
+                triggeredByEnemy = true;
+            }
+            else
+            {
+                Debug.LogWarning("Triggered, but by whom>?");
             }
         }
-        void Awake()
+        void Start()
         {
-            MobSpawner mobSpawner = GameObject.Find("MobSpawner").GetComponent<MobSpawner>();
+            InitializeMobSpawner();
         }
+
+        private void InitializeMobSpawner()
+        {
+            mobSpawner = GameObject.Find("MobSpawner").GetComponent<MobSpawner>();
+            
+            if (mobSpawner == null)
+                Debug.LogError("Doesn't found mob spawner");
+            else
+                Debug.Log("Found mobSpawner script");
+        }
+
         void Update()
         {
-            if (onTriggerEnter && mobSpawner !=null)
+            if (triggeredByEnemy)
             {
-                mobSpawner.currentNumberOfMobs--;
-                onTriggerEnter = false;
+                mobSpawner.currentNumberOfMobs -= 1;
+                Debug.Log("Deleted 1 mob from currentNumberOfMobs");
+                triggeredByEnemy = false;   
             }
         }
     }
