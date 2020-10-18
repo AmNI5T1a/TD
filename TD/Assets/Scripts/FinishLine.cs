@@ -17,7 +17,6 @@ namespace TD_game
             if (collider.gameObject.tag == "Enemy")
             {
                 Destroy(collider.gameObject, destroyDelay);
-                Debug.Log("Triggered by enemy");
                 triggeredByEnemy = true;
             }
             else
@@ -45,7 +44,6 @@ namespace TD_game
             if (triggeredByEnemy)
             {
                 mobSpawner.currentNumberOfMobs -= 1;
-                Debug.Log("Deleted 1 mob from currentNumberOfMobs");
                 triggeredByEnemy = false;   
             }
         }
