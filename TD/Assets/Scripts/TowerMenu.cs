@@ -8,7 +8,7 @@ namespace TD_game
     {
         [SerializeField] private bool towerMenuActive = false;
         GameObject towerMenu;
-        
+
         void Start()
         {
             towerMenu = GameObject.Find("TowersInventory");
