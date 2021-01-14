@@ -18,6 +18,20 @@ namespace TD_game
         }
         void Update()
         {
+            /// Camera Rotation
+
+            if (VirtualInputManager.Instance.RightClickMouse)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                transform.Rotate(transform.up, Input.GetAxis("Mouse X") * _cameraRotationSpeed * Time.deltaTime , Space.World);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            
             /// Camera Movement
             if (VirtualInputManager.Instance.MoveBack && VirtualInputManager.Instance.MoveFront)
             {
@@ -42,20 +56,6 @@ namespace TD_game
             if (VirtualInputManager.Instance.MoveRight)
             {
                 this.gameObject.transform.Translate(Vector3.right * _cameraSpeed * Time.deltaTime);
-            }
-
-            /// Camera Rotation
-
-            if (VirtualInputManager.Instance.RightClickMouse)
-            {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-                transform.Rotate(transform.up, -Input.GetAxis("Mouse X") * _cameraRotationSpeed * Time.deltaTime , Space.World);
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
             }
         }
     }
