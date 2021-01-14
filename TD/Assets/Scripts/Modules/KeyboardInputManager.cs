@@ -42,6 +42,22 @@ namespace TD_game
             {
                 VirtualInputManager.Instance.MoveRight = false;
             }
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                VirtualInputManager.Instance.LeftClickMouse = true;
+            }
+            else
+            {
+              VirtualInputManager.Instance.LeftClickMouse = false;  
+            }
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                VirtualInputManager.Instance.RightClickMouse = true;
+            }
+            else
+            {
+              VirtualInputManager.Instance.RightClickMouse = false;  
+            }
         }
     }
 }

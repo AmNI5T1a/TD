@@ -8,9 +8,11 @@ namespace TD_game
     public class VirtualInputManager : Singleton<VirtualInputManager>
     {
 
-        public bool MoveLeft;
+        public bool MoveLeft; 
         public bool MoveRight;
         public bool MoveFront;
         public bool MoveBack;
+        public bool LeftClickMouse;
+        public bool RightClickMouse;
     }
 }
