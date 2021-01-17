@@ -7,21 +7,18 @@ namespace TD_game
     public class TowerMenu : MonoBehaviour
     {
         [SerializeField] private bool towerMenuActive = false;
-        GameObject towerMenu;
+        private GameObject towerMenu;
 
         void Start()
         {
             towerMenu = GameObject.Find("TowersInventory");
             towerMenu.SetActive(false);
 
-            if (towerMenu == null)
-            {
-                Debug.LogError("Doesn't found tower menu in hierarchy");
-            }
-            else
-            {
-                Debug.Log("Found tower menu");
-            }
+
+            /// <summary>
+            /// If Tower Menu doesn't found, debug shows log error
+            /// <summary>
+            TowerMenuTestModul(towerMenu);
         }
         public void OpenCloseTowerMenu()
         {
@@ -37,6 +34,13 @@ namespace TD_game
                 towerMenuActive = true;
             }
         }
-    }
 
+        private void TowerMenuTestModul(GameObject towerMenu)
+        {
+            if (towerMenu == null)
+            {
+                Debug.LogError("Tower Menu not found check TowerMenu script");
+            }
+        }
+    }
 }
