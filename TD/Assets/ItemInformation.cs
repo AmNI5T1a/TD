@@ -8,7 +8,12 @@ namespace TD_game
     {
         [SerializeField] public GameObject imageAndIconOfItem;
 
+        public bool itemPurchased;
 
+        void Start()
+        {
+            itemPurchased = false;
+        }
     }
 }
 

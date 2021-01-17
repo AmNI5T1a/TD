@@ -31,8 +31,6 @@ namespace TD_game
 
             if (mobSpawner == null)
                 Debug.LogError("Doesn't found mob spawner");
-            else
-                Debug.Log("Found mobSpawner script");
         }
 
         void Update()

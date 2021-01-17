@@ -11,7 +11,7 @@ namespace TD_game
 
         void Start()
         {
-            towerMenu = GameObject.Find("TowersInventory");
+            towerMenu = GameObject.Find("TowerInventory");
             towerMenu.SetActive(false);
 
 
