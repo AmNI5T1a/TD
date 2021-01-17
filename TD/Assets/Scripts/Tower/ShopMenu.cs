@@ -9,6 +9,7 @@ namespace TD_game
     {
         [SerializeField] private bool shopMenuStatus = false;
 
+
         private GameObject shopMenu;
         void Start()
         {
@@ -34,6 +35,12 @@ namespace TD_game
                 shopMenu.SetActive(true);
                 shopMenuStatus = true;
             }
+        }
+
+        public void CloseShopButton()
+        {
+            shopMenu.SetActive(false);
+            shopMenuStatus = false;
         }
 
         private void ShopWasFoundTest(GameObject shopMenu)

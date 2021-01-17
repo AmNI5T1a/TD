@@ -19,10 +19,6 @@ namespace TD_game
                 Destroy(collider.gameObject, destroyDelay);
                 triggeredByEnemy = true;
             }
-            else
-            {
-                Debug.LogWarning("Triggered, but by whom>?");
-            }
         }
         void Start()
         {
@@ -32,7 +28,7 @@ namespace TD_game
         private void InitializeMobSpawner()
         {
             mobSpawner = GameObject.Find("MobSpawner").GetComponent<MobSpawner>();
-            
+
             if (mobSpawner == null)
                 Debug.LogError("Doesn't found mob spawner");
             else
@@ -44,7 +40,7 @@ namespace TD_game
             if (triggeredByEnemy)
             {
                 mobSpawner.currentNumberOfMobs -= 1;
-                triggeredByEnemy = false;   
+                triggeredByEnemy = false;
             }
         }
     }
