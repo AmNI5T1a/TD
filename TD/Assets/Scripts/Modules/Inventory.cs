@@ -12,11 +12,13 @@ namespace TD_game
         {
             itemList = new List<Item>();
 
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1 });
-            Debug.Log($"Count: {itemList.Count}");
+            #region TestBlock
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
+            // Debug.Log($"Count: {itemList.Count}");
+            #endregion
         }
 
         public void AddItem(Item item)

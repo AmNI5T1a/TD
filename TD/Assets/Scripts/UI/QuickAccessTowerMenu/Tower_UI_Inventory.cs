@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace TD_game
 {
@@ -38,7 +38,8 @@ namespace TD_game
                 RectTransform itemSlotRectTransform = Instantiate(_itemSlotTemplate, _itemSlotContainer).GetComponent<RectTransform>();
                 itemSlotRectTransform.gameObject.SetActive(true);
                 itemSlotRectTransform.anchoredPosition = new Vector2(_itemSlotPosition.x, _itemSlotPosition.y);
-
+                Image itemImage = itemSlotRectTransform.Find("icon").GetComponent<Image>();
+                itemImage.sprite = item.GetItemSprite(item.level);
                 _itemSlotPosition.x += 35f;
             }
         }
