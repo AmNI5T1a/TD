@@ -6,6 +6,7 @@ namespace TD_game
 {
     public class Shop : MonoBehaviour
     {
+        [SerializeField] private ShopMenu _uiShopMenu;
         private Inventory _shopInventory;
         void Start()
         {
@@ -15,6 +16,7 @@ namespace TD_game
         private void InstanciateShopInventory()
         {
             _shopInventory = new Inventory();
+            _uiShopMenu.SetShopInventory(_shopInventory);
         }
     }
 }
