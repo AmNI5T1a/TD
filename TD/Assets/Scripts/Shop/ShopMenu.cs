@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿#pragma warning disable 0649
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace TD_game
@@ -10,8 +13,11 @@ namespace TD_game
         [SerializeField] private bool shopMenuStatus = false;
         private Inventory _shopInventory;
 
-        private Transform _shopSlotContainer;
-        private Transform _shopItemSlotTemplate;
+        [SerializeField] private Transform _shopSlotContainer;
+        [SerializeField] private Transform _shopItemSlotTemplate;
+        [SerializeField] private Transform _shopScrollView;
+
+        [SerializeField] private GameObject _itemTemplate;
         private GameObject _shopMenu; // UI
 
         public void SetShopInventory(Inventory inventory)
@@ -33,8 +39,8 @@ namespace TD_game
         {
             foreach (Item item in _shopInventory.GetListOfItems())
             {
-                RectTransform itemSlotRectTransform = Instantiate(_shopItemSlotTemplate, _shopSlotContainer).GetComponent<RectTransform>();
-                itemSlotRectTransform.gameObject.SetActive(true);
+                GameObject inventoryItem = Instantiate(_itemTemplate, _shopSlotContainer);
+                inventoryItem.gameObject.SetActive(true);
             }
         }
         public void OpenOrCloseShopMenu()
@@ -46,14 +52,9 @@ namespace TD_game
             }
             else
             {
+                RefreshItemsInShopMenu();
                 _shopMenu.SetActive(true);
                 shopMenuStatus = true;
-                _shopSlotContainer = transform.Find("shop_Content");
-                _shopItemSlotTemplate = transform.Find("shop_itemTemplate");
-                if (_shopSlotContainer != null && _shopItemSlotTemplate != null)
-                    RefreshItemsInShopMenu();
-                else
-                    Debug.LogError("ShopMenu script: Can't update Menu cause stop template or container doesn't found");
             }
         }
 
