@@ -13,10 +13,10 @@ namespace TD_game
             itemList = new List<Item>();
 
             #region towerInventoryTestBlock
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
-            AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 1 });
+            // AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
             // Debug.Log($"Count: {itemList.Count}");
             #endregion
         }

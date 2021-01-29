@@ -8,11 +8,9 @@ namespace TD_game
 {
     public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject _destination;
+        [SerializeField] private GameObject _destination;
 
-        [SerializeField]
-        private NavMeshAgent _navMeshAgent;
+        [SerializeField] private NavMeshAgent _navMeshAgent;
 
         void Start()
         {

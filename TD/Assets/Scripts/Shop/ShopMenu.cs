@@ -18,6 +18,7 @@ namespace TD_game
         [SerializeField] private Transform _shopScrollView;
 
         [SerializeField] private GameObject _itemTemplate;
+        [SerializeField] private Image _itemTemplateIcon;
         private GameObject _shopMenu; // UI
 
         public void SetShopInventory(Inventory inventory)
@@ -41,6 +42,7 @@ namespace TD_game
             {
                 GameObject inventoryItem = Instantiate(_itemTemplate, _shopSlotContainer);
                 inventoryItem.gameObject.SetActive(true);
+                _itemTemplateIcon.sprite = item.GetItemSprite(item.level);
             }
         }
         public void OpenOrCloseShopMenu()
