@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿#pragma warning disable 0649
+
 using UnityEngine;
 
 namespace TD_game
@@ -8,14 +8,16 @@ namespace TD_game
     {
         [SerializeField] private GameObject _towerPrefab;
 
-        private bool _towerPlaceIsEmpty = true;
+        public bool TowerPlaceIsEmpty = true;
 
         void OnMouseDown()
         {
-            if (_towerPlaceIsEmpty)
+            Debug.LogWarning("OnMouseDown working well...");
+            if (TowerPlaceIsEmpty)
             {
-                GameObject tower = GameObject.Instantiate(_towerPrefab, transform.position + new Vector3(3.7f, -0.8f, 1.05f), Quaternion.identity);
-                _towerPlaceIsEmpty = false;
+                GameObject tower = GameObject.Instantiate(_towerPrefab, transform.position + new Vector3(3.7f, -0.8f, 1.05f), Quaternion.identity) as GameObject;
+
+                TowerPlaceIsEmpty = false;
             }
         }
     }

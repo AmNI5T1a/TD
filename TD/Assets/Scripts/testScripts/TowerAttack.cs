@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿#pragma warning disable 0649
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +14,7 @@ namespace TD_game
 
         [SerializeField] public float towerDamage;
         [SerializeField] private float _delayBetweenShots;
+        [SerializeField] private float towerRotateSpeed;
         public Transform target;
 
         void Update()
@@ -21,8 +24,12 @@ namespace TD_game
         }
         void Attack()
         {
-            _lookAtObj.transform.LookAt(target: target);
-            StartCoroutine(Shoot());
+            //_lookAtObj.transform.LookAt(target: target);
+
+            Quaternion targetPosition = Quaternion.LookRotation(target.transform.position - _lookAtObj.transform.position);
+            _lookAtObj.transform.rotation = Quaternion.RotateTowards(_lookAtObj.transform.rotation, targetPosition, towerRotateSpeed * Time.deltaTime);
+
+            //StartCoroutine(Shoot());
         }
 
         IEnumerator Shoot()
@@ -32,9 +39,9 @@ namespace TD_game
             missile.GetComponent<MissileMovement>().target = this.target;
         }
 
-        public void SetEnemy(Transform enemy)
+        public void SetEnemy(GameObject enemy)
         {
-            target = enemy;
+            target = enemy.transform;
 
             if (target == null)
                 Debug.LogError("TowerAttack script: Can't set an enemy");

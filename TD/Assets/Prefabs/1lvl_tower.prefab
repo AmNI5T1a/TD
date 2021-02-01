@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 501e1eb5b1a24a44dbbbb3a699ca2674, type: 2}
+  - {fileID: 2100000, guid: e7d2e7ffabf681147bbcafc8b70ba289, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 4843797156608245385}
   - component: {fileID: 4843797156608245386}
   - component: {fileID: 4843797156608245387}
-  - component: {fileID: 1920975560023510306}
   m_Layer: 0
   m_Name: BaseForRotation
   m_TagString: Untagged
@@ -212,15 +211,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4843797156608245381}
-  m_LocalRotation: {x: -0, y: 0.034511615, z: -0, w: 0.9994043}
+  m_LocalRotation: {x: -0, y: 0.08052082, z: -0, w: 0.9967529}
   m_LocalPosition: {x: -2.4833627, y: 0.8259999, z: -0.69050634}
   m_LocalScale: {x: 0.784, y: 0.21907, z: 0.784}
   m_Children:
   - {fileID: 4843797157016648273}
-  - {fileID: 1361603289937897703}
   m_Father: {fileID: 4843797157649684899}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 3.956, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 9.237, z: 0}
 --- !u!33 &4843797156608245385
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -280,24 +278,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1920975560023510306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4843797156608245381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e234b3145f93ac4885e3f4f4f224345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _elementForShoot: {fileID: 0}
-  _lookAtObj: {fileID: 0}
-  _rocketPrefab: {fileID: 0}
-  towerDamage: 0
-  _delayBetweenShots: 0
-  target: {fileID: 0}
 --- !u!1 &4843797156954130094
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,6 +494,7 @@ Transform:
   - {fileID: 4843797156454462822}
   - {fileID: 4843797156954130093}
   - {fileID: 4843797156608245380}
+  - {fileID: 1361603289937897703}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -534,7 +515,8 @@ MonoBehaviour:
   _rocketPrefab: {fileID: 5471871244185361327, guid: 7a88c30acad1fff4ea093abf3d9bc717,
     type: 3}
   towerDamage: 20
-  _delayBetweenShots: 1
+  _delayBetweenShots: 1000
+  towerRotateSpeed: 150
   target: {fileID: 0}
 --- !u!1 &4869022590683949422
 GameObject:
@@ -563,12 +545,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4869022590683949422}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.28}
-  m_LocalScale: {x: 14, y: 18, z: 5}
+  m_LocalRotation: {x: -0, y: 0.034511615, z: -0, w: 0.9994043}
+  m_LocalPosition: {x: -2.4682198, y: 0.8259999, z: -0.4715093}
+  m_LocalScale: {x: 10.976001, y: 3.94326, z: 3.9200003}
   m_Children: []
-  m_Father: {fileID: 4843797156608245380}
-  m_RootOrder: 1
+  m_Father: {fileID: 4843797157649684899}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4031216062260790511
 MeshFilter:
@@ -641,3 +623,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc70b9fb4ad3094a9c857aaea7ffcce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _towerAttack: {fileID: 3489049384548270873}

@@ -12,7 +12,8 @@ namespace TD_game
 
         void Update()
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            if (target != null)
+                transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
         }
     }
 }

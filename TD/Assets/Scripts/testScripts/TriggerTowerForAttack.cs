@@ -1,3 +1,5 @@
+#pragma warning disable 0649
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +8,20 @@ namespace TD_game
 {
     public class TriggerTowerForAttack : MonoBehaviour
     {
-        private TowerAttack _towerAttack;
+        [SerializeField] private TowerAttack _towerAttack;
 
-        private Transform _enemy;
+        //private Transform _enemy;
         private GameObject _currentTarget;
 
-        private bool _loockedOnTarget = false;
+        private bool _lockedOnTarget = false;
 
         void OnTriggerEnter(Collider triggeredCollider)
         {
-            Debug.LogWarning("Trigger func working well");
-            if (triggeredCollider.CompareTag("Enemy") && _loockedOnTarget != true)
+            if (triggeredCollider.CompareTag("Enemy") && _lockedOnTarget != true)
             {
                 Debug.Log("Triggered by enemy");
-                _towerAttack.SetEnemy(triggeredCollider.gameObject.transform);
-                _loockedOnTarget = true;
+                _towerAttack.SetEnemy(triggeredCollider.gameObject);
+                _lockedOnTarget = true;
                 _currentTarget = triggeredCollider.gameObject;
             }
         }
@@ -30,7 +31,8 @@ namespace TD_game
             if (triggeredCollider.CompareTag("Enemy") && triggeredCollider.gameObject == _currentTarget)
             {
                 Debug.Log("Locked target left/dead => Searching for a new target");
-                _loockedOnTarget = false;
+                _lockedOnTarget = false;
+                _towerAttack.target = null;
             }
         }
     }
