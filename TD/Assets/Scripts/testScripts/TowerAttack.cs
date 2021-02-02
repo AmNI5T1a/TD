@@ -8,7 +8,6 @@ namespace TD_game
 {
     public class TowerAttack : MonoBehaviour
     {
-        [SerializeField] private Transform _elementForShoot;
         [SerializeField] private Transform _lookAtObj;
         [SerializeField] private GameObject _rocketPrefab;
         [SerializeField] private Transform _missilePosition;
@@ -22,6 +21,9 @@ namespace TD_game
         {
             if (target != null)
                 Attack();
+
+            // Ray gunPosition = new Ray(transform.position, transform.forward);
+            // Debug.DrawRay(transform.position, transform.forward, Color.cyan);
         }
         void Attack()
         {

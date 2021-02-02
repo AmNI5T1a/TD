@@ -14,8 +14,8 @@ namespace TD_game
         {
             if (TowerPlaceIsEmpty)
             {
-                GameObject tower = GameObject.Instantiate(_towerPrefab, transform.position + new Vector3(3.7f, -0.8f, 1.05f), Quaternion.identity) as GameObject;
-
+                GameObject tower = GameObject.Instantiate(_towerPrefab, transform.position, Quaternion.identity) as GameObject;
+                //+ new Vector3(3.7f, -0.8f, 1.05f)
                 TowerPlaceIsEmpty = false;
             }
         }
