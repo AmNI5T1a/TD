@@ -11,11 +11,12 @@ namespace TD_game
         [SerializeField] private Transform _elementForShoot;
         [SerializeField] private Transform _lookAtObj;
         [SerializeField] private GameObject _rocketPrefab;
-
+        [SerializeField] private Transform _missilePosition;
         [SerializeField] public float towerDamage;
         [SerializeField] private float _delayBetweenShots;
         [SerializeField] private float towerRotateSpeed;
         public Transform target;
+        private bool shooting = false;
 
         void Update()
         {
@@ -24,19 +25,21 @@ namespace TD_game
         }
         void Attack()
         {
-            //_lookAtObj.transform.LookAt(target: target);
-
             Quaternion targetPosition = Quaternion.LookRotation(target.transform.position - _lookAtObj.transform.position);
             _lookAtObj.transform.rotation = Quaternion.RotateTowards(_lookAtObj.transform.rotation, targetPosition, towerRotateSpeed * Time.deltaTime);
 
-            //StartCoroutine(Shoot());
+            if (!shooting)
+                StartCoroutine(Shoot());
         }
 
         IEnumerator Shoot()
         {
-            yield return new WaitForSeconds(_delayBetweenShots);
-            GameObject missile = GameObject.Instantiate(_rocketPrefab, _elementForShoot.position, Quaternion.identity);
+            shooting = true;
+            Debug.Log("Shooting");
+            GameObject missile = GameObject.Instantiate(_rocketPrefab, _missilePosition.position, _missilePosition.rotation);
             missile.GetComponent<MissileMovement>().target = this.target;
+            yield return new WaitForSeconds(_delayBetweenShots);
+            shooting = false;
         }
 
         public void SetEnemy(GameObject enemy)

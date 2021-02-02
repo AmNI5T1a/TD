@@ -19,7 +19,6 @@ namespace TD_game
         {
             if (triggeredCollider.CompareTag("Enemy") && _lockedOnTarget != true)
             {
-                Debug.Log("Triggered by enemy");
                 _towerAttack.SetEnemy(triggeredCollider.gameObject);
                 _lockedOnTarget = true;
                 _currentTarget = triggeredCollider.gameObject;
@@ -30,7 +29,6 @@ namespace TD_game
         {
             if (triggeredCollider.CompareTag("Enemy") && triggeredCollider.gameObject == _currentTarget)
             {
-                Debug.Log("Locked target left/dead => Searching for a new target");
                 _lockedOnTarget = false;
                 _towerAttack.target = null;
             }
