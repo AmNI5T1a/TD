@@ -8,29 +8,30 @@ namespace TD_game
 {
     public class TowerAttack : MonoBehaviour
     {
+        [Header("Serialized fields")]
         [SerializeField] private Transform _lookAtObj;
         [SerializeField] private GameObject _rocketPrefab;
         [SerializeField] private Transform _missilePosition;
+        [SerializeField] private GunRayTrigger _gunRay;
+        [Header("Stats")]
         [SerializeField] public float towerDamage;
         [SerializeField] private float _delayBetweenShots;
         [SerializeField] private float towerRotateSpeed;
         public Transform target;
         private bool shooting = false;
+        public bool targetInSight = false;
 
         void Update()
         {
             if (target != null)
                 Attack();
-
-            // Ray gunPosition = new Ray(transform.position, transform.forward);
-            // Debug.DrawRay(transform.position, transform.forward, Color.cyan);
         }
         void Attack()
         {
             Quaternion targetPosition = Quaternion.LookRotation(target.transform.position - _lookAtObj.transform.position);
             _lookAtObj.transform.rotation = Quaternion.RotateTowards(_lookAtObj.transform.rotation, targetPosition, towerRotateSpeed * Time.deltaTime);
 
-            if (!shooting)
+            if (!shooting && _gunRay.TargetInSight())
                 StartCoroutine(Shoot());
         }
 
