@@ -24,14 +24,14 @@ namespace TD_game
             {
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                transform.Rotate(transform.up, Input.GetAxis("Mouse X") * _cameraRotationSpeed * Time.deltaTime , Space.World);
+                transform.Rotate(transform.up, Input.GetAxis("Mouse X") * _cameraRotationSpeed * Time.deltaTime, Space.World);
             }
             else
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-            
+
             /// Camera Movement
             if (VirtualInputManager.Instance.MoveBack && VirtualInputManager.Instance.MoveFront)
             {
