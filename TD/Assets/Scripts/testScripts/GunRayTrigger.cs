@@ -9,8 +9,8 @@ namespace TD_game
         [HideInInspector] public Ray gunRay;
         void Update()
         {
-            gunRay = new Ray(transform.position, transform.up);
-            Debug.DrawRay(transform.position, transform.up * 10f, Color.cyan);
+            gunRay = new Ray(transform.position, -transform.up);
+            Debug.DrawRay(transform.position, -transform.up * 10f, Color.cyan);
         }
 
         public bool TargetInSight()

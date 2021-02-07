@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &234565658728618571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234565658728618568}
+  - component: {fileID: 234565658728618569}
+  m_Layer: 0
+  m_Name: ItemIconsAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &234565658728618568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234565658728618571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &234565658728618569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234565658728618571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347d8a1ec2c65274bb1db3f75fc928dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unknownSprite: {fileID: 21300000, guid: ae97a715f846d2848a222fe05121a0cd, type: 3}
+  tower_1lvl: {fileID: 21300000, guid: 1dcc651b72ff3d044898f689c61c4e61, type: 3}
+  tower_4lvl: {fileID: 21300000, guid: 70b1d44c39eea114fb21c3c8164ee8ce, type: 3}
+  potion_1lvl: {fileID: -8419157238138717284, guid: 98a3a575e9130a24abefe7a1921a57e6,
+    type: 3}
+  potion_4lvl: {fileID: 6285645462315052536, guid: 98a3a575e9130a24abefe7a1921a57e6,
+    type: 3}

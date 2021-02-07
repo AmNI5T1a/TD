@@ -24,7 +24,9 @@ namespace TD_game
         void Update()
         {
             if (target != null)
+            {
                 Attack();
+            }
         }
         void Attack()
         {
@@ -48,9 +50,6 @@ namespace TD_game
         public void SetEnemy(GameObject enemy)
         {
             target = enemy.transform;
-
-            if (target == null)
-                Debug.LogError("TowerAttack script: Can't set an enemy");
         }
     }
 }
