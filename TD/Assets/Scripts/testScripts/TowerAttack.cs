@@ -12,7 +12,7 @@ namespace TD_game
         [SerializeField] private Transform _lookAtObj;
         [SerializeField] private GameObject _rocketPrefab;
         [SerializeField] private Transform _missilePosition;
-        [SerializeField] private GunRayTrigger _gunRay;
+        [SerializeField] private PlasmaTower_gunRayTrigger _gunRay;
         [Header("Stats")]
         [SerializeField] public float towerDamage;
         [SerializeField] private float _delayBetweenShots;

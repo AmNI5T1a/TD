@@ -102,7 +102,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 383890823898377160}
-  - component: {fileID: 4522326546440049160}
   - component: {fileID: 4144392683568662732}
   m_Layer: 2
   m_Name: TowerObserveZone(TriggerZone)
@@ -125,19 +124,6 @@ Transform:
   m_Father: {fileID: 7430322317435580948}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4522326546440049160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3443006098734538831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adc70b9fb4ad3094a9c857aaea7ffcce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _towerAttack: {fileID: 8165225024219513520}
 --- !u!135 &4144392683568662732
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -479,11 +465,12 @@ MonoBehaviour:
   _rocketPrefab: {fileID: 3292734080569788522, guid: 980a555c43c76e140ad00a7865e8acbd,
     type: 3}
   _missilePosition: {fileID: 2688023584459623488}
-  _gunRay: {fileID: 4990170550874275897}
+  _gunRay: {fileID: 0}
   towerDamage: 20
   _delayBetweenShots: 1
   towerRotateSpeed: 150
   target: {fileID: 0}
+  targetInSight: 0
 --- !u!1 &8943974152695857201
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +483,6 @@ GameObject:
   - component: {fileID: 6054562593463879136}
   - component: {fileID: 7419481387404898065}
   - component: {fileID: 7206820827835890553}
-  - component: {fileID: 4990170550874275897}
   m_Layer: 0
   m_Name: gun
   m_TagString: Untagged
@@ -578,15 +564,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &4990170550874275897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8943974152695857201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00dd55c9b81134478d39443a0ff4bb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

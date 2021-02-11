@@ -8,8 +8,6 @@ namespace TD_game
 {
     public class TowerObserveZoneTrigger : MonoBehaviour
     {
-        [Header("References")]
-
         private GameObject _currentTarget;
         private bool _lockedOnTarget = false;
 
@@ -36,5 +34,4 @@ namespace TD_game
             return _currentTarget;
         }
     }
-
 }

@@ -25,15 +25,18 @@ namespace TD_game
     }
     public class MobSpawner : MonoBehaviour
     {
-        [SerializeField] private byte maxNumberOfMobsOnScene;
-
+        [Header("References: ")]
         [SerializeField] private GameObject _enemyPrefab;
 
-        [SerializeField] private float enemySpawnInterval = 0.75f;
+        [Header("Stats: ")]
+        [Tooltip("Max number of mobs on scene")] [SerializeField] private byte maxNumberOfMobsOnScene;
+
+        [Tooltip("Delay in seconds(float)")] [SerializeField] private float enemySpawnInterval = 1f;
 
         [SerializeField] public List<Transform> spawnPoints = new List<Transform>();
         [HideInInspector] public List<Mob> listofenemies = new List<Mob>();
-        [SerializeField] public byte currentNumberOfMobs = 0;
+        [Header("In game stats: ")]
+        [Tooltip("Shows current number of mobs on scene in play mode")] [SerializeField] public byte currentNumberOfMobs = 0;
 
         void Start()
         {
