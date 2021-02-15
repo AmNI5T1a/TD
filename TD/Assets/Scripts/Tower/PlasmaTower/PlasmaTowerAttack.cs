@@ -13,7 +13,7 @@ namespace TD_game
         [SerializeField] private PlasmaTower_gunRayTrigger _gunRayTrigger;
 
         [SerializeField] private PlasmaTower_horizontalRotation _horizontalRotation;
-        [SerializeField] private PlasmaTower_verticalRotation _vertivalRotation;
+        [SerializeField] private PlasmaTower_verticalRotation _verticalRotation;
         [SerializeField] private GameObject _missilePrefab;
         [SerializeField] private Transform _missilePosition;
 
@@ -21,6 +21,7 @@ namespace TD_game
         //[SerializeField] private byte _towerDamage = 20;
         [SerializeField] private byte _delayBetweenShots = 1;
         [SerializeField] public float _horizontalRotationSpeed = 0f;
+        [SerializeField] public float _verticalRotationSpeed = 0f;
 
         [HideInInspector] public GameObject target;
         private bool _shooting = false;
@@ -42,7 +43,7 @@ namespace TD_game
         void RotateTowerToGetInSightAnEnemy()
         {
             _horizontalRotation.Rotate(target: target);
-            _vertivalRotation.Rotate(target: target);
+            _verticalRotation.Rotate(target: target);
         }
 
         void Attack()

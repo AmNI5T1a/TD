@@ -6,6 +6,7 @@ namespace TD_game
 {
     public class PlasmaTower_horizontalRotation : MonoBehaviour
     {
+        [Header("References: ")]
         [SerializeField] private PlasmaTowerAttack _plasmaTowerAttack;
         public void Rotate(GameObject target)
         {

@@ -1,4 +1,4 @@
-﻿#pragma warning disable 0649
+#pragma warning disable 0649
 
 using System.Collections;
 using System.Collections.Generic;
@@ -38,16 +38,17 @@ namespace TD_game
         [Header("In game stats: ")]
         [Tooltip("Shows current number of mobs on scene in play mode")] [SerializeField] public byte currentNumberOfMobs = 0;
 
+
         void Start()
         {
-            StartCoroutine(routine: Spawner());
+            StartCoroutine(Spawner());
         }
         public void CreateMob()
         {
             currentNumberOfMobs++;
             Mob currentMob = new Mob(enemyPrefab: _enemyPrefab, spawnpoint: spawnPoints[Random.Range(0, spawnPoints.Count)]);
             listofenemies.Add(currentMob);
-            SpawnAMob(ref currentMob);
+            SpawnAMob(ref currentMob);  
         }
         void SpawnAMob(ref Mob mob)
         {
@@ -55,12 +56,15 @@ namespace TD_game
         }
         private IEnumerator Spawner()
         {
-
-            while (currentNumberOfMobs < maxNumberOfMobsOnScene)
+            while (true)
             {
-                CreateMob();
+                if (currentNumberOfMobs < maxNumberOfMobsOnScene)
+                {
+                    CreateMob();
 
-                yield return new WaitForSeconds(enemySpawnInterval);
+                    yield return new WaitForSeconds(enemySpawnInterval);
+                }
+                yield return new WaitForEndOfFrame();
             }
         }
     }
