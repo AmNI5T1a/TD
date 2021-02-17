@@ -8,7 +8,6 @@ namespace TD_game
 {
     public class FinishLine : MonoBehaviour
     {
-        private bool triggeredByEnemy = false;
         private MobSpawner mobSpawner = null;
         [Range(0, 1)]
         public float destroyDelay = 0.75f;
@@ -17,7 +16,7 @@ namespace TD_game
             if (collider.gameObject.tag == "Enemy")
             {
                 Destroy(collider.gameObject, destroyDelay);
-                triggeredByEnemy = true;
+                mobSpawner.currentNumberOfMobs -= 1;
             }
         }
         void Start()
@@ -31,15 +30,6 @@ namespace TD_game
 
             if (mobSpawner == null)
                 Debug.LogError("Doesn't found mob spawner");
-        }
-
-        void Update()
-        {
-            if (triggeredByEnemy)
-            {
-                mobSpawner.currentNumberOfMobs -= 1;
-                triggeredByEnemy = false;
-            }
         }
     }
 }

@@ -21,16 +21,14 @@ namespace TD_game
             if (triggeredCollider.gameObject.CompareTag("Enemy"))
             {
                 _listOfExistingEnemies.Add(triggeredCollider.gameObject);
-                Debug.Log("Added an enemy to the list");
             }
         }
 
         void Update()
         {
-            if (_currentTarget == null)
+            if (_currentTarget == null && _listOfExistingEnemies.Count != 0)
             {
                 ChooseATargetToFocus();
-                Debug.Log("Choosing a target to focus");
             }
         }
 
@@ -39,7 +37,6 @@ namespace TD_game
             if (triggeredCollider.gameObject.CompareTag("Enemy"))
             {
                 _listOfExistingEnemies.Remove(triggeredCollider.gameObject);
-                Debug.Log("Removed from list an enemy");
             }
 
             if (triggeredCollider.gameObject == _currentTarget)

@@ -12,10 +12,6 @@ namespace TD_game
         {
             Quaternion direction = Quaternion.LookRotation(target.transform.position - this.transform.position);
 
-            //direction.y = 0f;
-            direction.z = 0f;
-            //direction.x = 0f;
-
             this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, direction, _plasmaTowerAttack._verticalRotationSpeed * Time.deltaTime);
         }
     }

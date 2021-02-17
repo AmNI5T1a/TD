@@ -6,11 +6,23 @@ using UnityEngine.AI;
 
 namespace TD_game
 {
+    public enum TransitionParameters
+    {
+        Move,
+        Idle,
+        Death,
+        Attack
+    }
     public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] private GameObject _destination;
+        [Header("References: ")]
 
         [SerializeField] private NavMeshAgent _navMeshAgent;
+        [SerializeField] private Animator _enemyAnimator;
+
+
+        [Header("In game references: ")]
+        [Tooltip("After GameObject instanciation, script will try to find destination or shows an error")] [SerializeField] private GameObject _destination;
 
         void Start()
         {
@@ -33,7 +45,7 @@ namespace TD_game
             if (_destination == null)
                 _destination = GameObject.FindGameObjectWithTag("Finish");
             else
-                Debug.LogError("Doesn't found object with tag : Finish in InitializeTargetDestination method");
+                Debug.LogError("Doesn't found object with tag");
         }
 
         void SetDestination()
@@ -42,9 +54,11 @@ namespace TD_game
             {
                 Vector3 targetDestinationVector = _destination.transform.position;
                 _navMeshAgent.SetDestination(targetDestinationVector);
+                _enemyAnimator.SetBool(TransitionParameters.Move.ToString(), true);
             }
             else
                 Debug.LogError("Destination is empty on " + this.gameObject);
+            _enemyAnimator.SetBool(TransitionParameters.Move.ToString(), false);
         }
     }
 }
