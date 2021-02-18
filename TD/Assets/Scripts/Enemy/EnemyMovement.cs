@@ -28,7 +28,6 @@ namespace TD_game
         {
             InitializeTargetDestination();
             InitializeNavMesh(ref _navMeshAgent);
-
         }
 
         void InitializeNavMesh(ref NavMeshAgent navMeshAgent)
@@ -57,8 +56,10 @@ namespace TD_game
                 _enemyAnimator.SetBool(TransitionParameters.Move.ToString(), true);
             }
             else
+            {
                 Debug.LogError("Destination is empty on " + this.gameObject);
-            _enemyAnimator.SetBool(TransitionParameters.Move.ToString(), false);
+                _enemyAnimator.SetBool(TransitionParameters.Move.ToString(), false);
+            }
         }
     }
 }

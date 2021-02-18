@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 8699673291471537526}
   - component: {fileID: 8699673291471537527}
   - component: {fileID: 4154114039372787431}
+  - component: {fileID: 2346607843516189228}
   m_Layer: 0
   m_Name: zombiegirl_w_kurniawan
   m_TagString: Enemy
@@ -502,7 +503,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1.1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -530,6 +531,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &2346607843516189228
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836156405412114624}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3164982
+  m_Height: 2.0456247
+  m_Direction: 1
+  m_Center: {x: -0.009066075, y: 1.0067265, z: 0}
 --- !u!1 &1036811484229048190
 GameObject:
   m_ObjectHideFlags: 0
