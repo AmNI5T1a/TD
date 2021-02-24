@@ -58,7 +58,8 @@ namespace TD_game
         {
             _shooting = true;
             GameObject projectile = GameObject.Instantiate(_missilePrefab, _missilePosition.position, _missilePosition.rotation);
-            projectile.GetComponent<MissileMovement>().target = this.target.transform;
+            projectile.GetComponent<ProjectileMovement>().target = this.target.transform;
+            //projectile.GetComponentInChildren<PointToFocus>().
             yield return new WaitForSeconds(_delayBetweenShots);
             _shooting = false;
         }

@@ -48,11 +48,13 @@ namespace TD_game
             currentNumberOfMobs++;
             Mob currentMob = new Mob(enemyPrefab: _enemyPrefab, spawnpoint: spawnPoints[Random.Range(0, spawnPoints.Count)]);
             listofenemies.Add(currentMob);
-            SpawnAMob(ref currentMob);  
+            SpawnAMob(ref currentMob);
         }
         void SpawnAMob(ref Mob mob)
         {
-            GameObject.Instantiate(mob.enemyPrefab, mob.spawnpoint.position, Quaternion.identity);
+            Vector3 randomSpawnPosition = new Vector3(mob.spawnpoint.position.x + Random.Range(-5f, 5f), mob.spawnpoint.position.y, mob.spawnpoint.position.z + Random.Range(-5f, 5f));
+
+            GameObject.Instantiate(mob.enemyPrefab, randomSpawnPosition, Quaternion.identity);
         }
         private IEnumerator Spawner()
         {
