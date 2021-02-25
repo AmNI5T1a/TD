@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8605816256933239066}
   - component: {fileID: 3273378856275238471}
   - component: {fileID: 28255990833822451}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,6 +55,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -79,6 +81,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1748838000272818476
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7413567853523885538}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +123,7 @@ GameObject:
   - component: {fileID: 1292665411586408309}
   - component: {fileID: 5303962585495444791}
   - component: {fileID: 2363257228919577494}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,6 +167,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -188,6 +193,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2012223446251411841
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +205,7 @@ GameObject:
   - component: {fileID: 6581971545509067440}
   - component: {fileID: 1048940703336877378}
   - component: {fileID: 8720196772514117417}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,6 +249,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -267,6 +275,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2351599416879297169
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655590652346220674}
   - component: {fileID: 8679515294388547064}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: nuke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +345,7 @@ GameObject:
   - component: {fileID: 8517728005348611781}
   - component: {fileID: 4148750089387551391}
   - component: {fileID: 7817975760067158938}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,6 +388,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -403,6 +414,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2718571425349867426
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +426,7 @@ GameObject:
   - component: {fileID: 8165410171147704890}
   - component: {fileID: 3396056451215104408}
   - component: {fileID: 1160022972085861772}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cube_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,6 +470,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -482,6 +496,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2884481454932205067
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4401163875808105381}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +538,7 @@ GameObject:
   - component: {fileID: 4168890830386023882}
   - component: {fileID: 902575041875435949}
   - component: {fileID: 6160185892364019650}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Cone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,6 +581,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -590,6 +607,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3292734080569788522
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,9 +617,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9161472494629606225}
-  - component: {fileID: 8587434168250804985}
   - component: {fileID: 2888601863245905075}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: 1lvl_missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,20 +640,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8587434168250804985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292734080569788522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f8e0110b0e8ea42b4f81a2e35899df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  target: {fileID: 0}
 --- !u!54 &2888601863245905075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -662,7 +665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6256730619032614357}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +697,7 @@ GameObject:
   - component: {fileID: 1311855112852644367}
   - component: {fileID: 7188424705554835390}
   - component: {fileID: 761219087200740993}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,6 +740,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -761,6 +766,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5639619390703137053
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1193899048605224600}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Shear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -800,7 +806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7713290918413694251}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Explosion_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
