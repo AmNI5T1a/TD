@@ -25,7 +25,11 @@ namespace TD_game
             _projectileRigidbody = this.GetComponent<Rigidbody>();
 
             damage = Random.Range(20, 30);
+        }
 
+        void Start()
+        {
+            Physics.IgnoreCollision(target.GetComponent<Collider>(), GetComponent<Collider>());
         }
 
         void Update()

@@ -354,3 +354,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarSlider: {fileID: 468169451080190268}
   _cameraToFollow: {fileID: 0}
+  _enemyStatsReference: {fileID: 0}

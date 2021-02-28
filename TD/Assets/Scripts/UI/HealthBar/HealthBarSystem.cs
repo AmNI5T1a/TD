@@ -10,6 +10,7 @@ namespace TD_game
         [Header("References: ")]
         [SerializeField] private Slider _healthBarSlider;
         [SerializeField] private GameObject _cameraToFollow;
+        [SerializeField] private EnemyStats _enemyStatsReference;
 
         void Start()
         {
@@ -23,7 +24,13 @@ namespace TD_game
             this.transform.LookAt(_cameraToFollow.transform);
         }
 
-        private void ShowErrorToConsoleIfCameraNotFound()
+        public void UpdateHealthBarUI()
+        {
+            _healthBarSlider.value = CalculateHealthToSlider();
+        }
+
+        float CalculateHealthToSlider() => _enemyStatsReference.currentEnemyHealth / _enemyStatsReference.maxEnemyHealth;
+        void ShowErrorToConsoleIfCameraNotFound()
         {
             Debug.LogError("Doesn't found definition for camera");
         }

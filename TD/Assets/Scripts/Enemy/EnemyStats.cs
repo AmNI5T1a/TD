@@ -14,6 +14,7 @@ namespace TD_game
 
         [Header("References: ")]
         [SerializeField] private GameObject _healthBarUI;
+        [SerializeField] private HealthBarSystem _healthBarSystem;
 
         void Awake()
         {
@@ -22,18 +23,12 @@ namespace TD_game
         void Start()
         {
             currentEnemyHealth = maxEnemyHealth;
-
-            //_healthBarUI.SetActive(false);
-        }
-
-        void Update()
-        {
-
         }
 
         public void TakeDamage(float damage)
         {
             currentEnemyHealth -= damage;
+            _healthBarSystem.UpdateHealthBarUI();
 
             if (currentEnemyHealth <= 0)
                 KillEnemy();
@@ -42,6 +37,5 @@ namespace TD_game
         {
             Destroy(this.gameObject);
         }
-        public float CalculateHealthToSlider() => currentEnemyHealth / maxEnemyHealth;
     }
 }
