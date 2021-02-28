@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 2888601863245905075}
   m_Layer: 12
   m_Name: 1lvl_missile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

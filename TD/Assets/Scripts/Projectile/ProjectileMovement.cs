@@ -9,6 +9,9 @@ namespace TD_game
         [Header("Stats: ")]
         [SerializeField] private float speed = 10;
 
+        [Tooltip("Random float value will generate when prefab instanciated")]
+        [SerializeField] public float damage = 0f;
+
         [Header("References (working only in play mode): ")]
         [Tooltip("Prefab will take enemy position after instanciation")]
         public Transform target;
@@ -16,9 +19,13 @@ namespace TD_game
         private Rigidbody _projectileRigidbody;
 
 
+
         void Awake()
         {
             _projectileRigidbody = this.GetComponent<Rigidbody>();
+
+            damage = Random.Range(20, 30);
+
         }
 
         void Update()

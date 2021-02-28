@@ -8,11 +8,14 @@ namespace TD_game
 
     public class HitRegister : MonoBehaviour
     {
-        void OnTriggerEnter(Collider enteredCollider)
+        [Header("References: ")]
+        [SerializeField] private EnemyStats _enemyStats;
+        void OnTriggerEnter(Collider collider)
         {
-            if (enteredCollider.gameObject.tag == "Projectile")
+            if (collider.gameObject.tag == "Projectile")
             {
-                Debug.Log("Hitted by missle");
+                _enemyStats.TakeDamage(collider.gameObject.GetComponent<ProjectileMovement>().damage);
+                Destroy(collider.gameObject);
             }
         }
     }

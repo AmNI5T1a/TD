@@ -14,17 +14,16 @@ namespace TD_game
 
         [Header("References: ")]
         [SerializeField] private GameObject _healthBarUI;
-        [SerializeField] private Slider _healthBarSlider;
 
         void Awake()
         {
             currentEnemyHealth = maxEnemyHealth;
-
-            _healthBarSlider.value = CalculateHealthToSlider();
         }
         void Start()
         {
-            _healthBarUI.SetActive(false);
+            currentEnemyHealth = maxEnemyHealth;
+
+            //_healthBarUI.SetActive(false);
         }
 
         void Update()
@@ -32,6 +31,13 @@ namespace TD_game
 
         }
 
+        public void TakeDamage(float damage)
+        {
+            currentEnemyHealth -= damage;
+
+            if (currentEnemyHealth <= 0)
+                KillEnemy();
+        }
         public void KillEnemy()
         {
             Destroy(this.gameObject);
