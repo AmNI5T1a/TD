@@ -15,10 +15,24 @@ namespace TD_game
             InstanciateTowerInventory();
         }
 
+        void Update()
+        {
+            if (Input.GetKeyDown("p"))
+            {
+                AddItemToTowerInventory(ref _towerInventory);
+                _towerUI_Inventory.RefreshInventory();
+            }
+        }
+
         private void InstanciateTowerInventory()
         {
             _towerInventory = new Inventory();
             _towerUI_Inventory.SetInventory(_towerInventory);
+        }
+
+        public void AddItemToTowerInventory(ref Inventory towerInventory)
+        {
+            towerInventory.AddItem(new Item { itemType = Item.ItemType.Tower, amount = 1, level = 4 });
         }
     }
 }
