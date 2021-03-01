@@ -535,8 +535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _navMeshAgent: {fileID: 8699673291471537527}
   _enemyAnimator: {fileID: 6002108405425369001}
-  _projectileCollider: {fileID: 0}
-  _thisCollider: {fileID: 6218975122298304431}
   _destination: {fileID: 0}
 --- !u!114 &4005635621785635415
 MonoBehaviour:
@@ -1509,10 +1507,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3599648
-  m_Height: 2.0775006
+  m_Radius: 0.22008714
+  m_Height: 1.7963114
   m_Direction: 1
-  m_Center: {x: 0.0034933686, y: 0.9783262, z: 0.014657468}
+  m_Center: {x: 0, y: 1.0048697, z: 0}
 --- !u!114 &5438738288088024099
 MonoBehaviour:
   m_ObjectHideFlags: 0

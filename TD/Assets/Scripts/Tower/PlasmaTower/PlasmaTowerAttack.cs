@@ -18,7 +18,6 @@ namespace TD_game
         [SerializeField] private Transform _missilePosition;
 
         [Header("Stats: ")]
-        //[SerializeField] private byte _towerDamage = 20;
         [SerializeField] private byte _delayBetweenShots = 1;
         [SerializeField] public float _horizontalRotationSpeed = 0f;
         [SerializeField] public float _verticalRotationSpeed = 0f;
